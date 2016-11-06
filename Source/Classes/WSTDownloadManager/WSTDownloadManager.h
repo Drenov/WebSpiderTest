@@ -26,9 +26,27 @@
 
 @property (nonatomic, readonly) NSArray<WSTPageModel*>      *pages;
 
++ (instancetype)managerWithTagretUrl:(NSString *)targetUrl
+                          targetWord:(NSString *)targetUrl
+                     numberOfThreads:(NSInteger)threads
+                          maxDeepnes:(NSInteger)deepnes
+                          maxResults:(NSInteger)maxResults;
+
 @property (nonatomic, weak)     id          delegate;
 
+/*!
+ Starts downloading or resume if suspended
+ */
 - (void)start;
+
+/*!
+ Suspend downloading
+ */
+- (void)suspend;
+
+/*!
+ Stop and reset downloading 
+ */
 - (void)stop;
 
 @end

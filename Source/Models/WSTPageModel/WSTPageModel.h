@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, WSTPageLoadState) {
 
 @interface WSTPageModel : NSObject
 @property (nonatomic, copy)     NSString            *pageUrl;
-@property (nonatomic, copy)     NSString            *targerWord;
+@property (nonatomic, copy)     NSString            *targetWord;
 @property (nonatomic, strong)   NSDate              *timeStamp;
 @property (nonatomic, strong)   NSArray             *containedLinks;
 @property (nonatomic, assign)   NSInteger           targetWordCount;

@@ -57,7 +57,7 @@
     
     if (resultPage.length && !err) {
         pageModel.timeStamp = [NSDate date];
-        pageModel.targetWordCount = [resultPage numberOfOccurencesOfSubstring:pageModel.targerWord];
+        pageModel.targetWordCount = [resultPage numberOfOccurencesOfSubstring:pageModel.targetWord];
         pageModel.containedLinks = [self cleanedLinks:[resultPage urlLinksComponents]];
         pageModel.loadState = WSTPageLoadStateDownloaded;
     } else {

@@ -15,6 +15,7 @@
 @property (nonatomic, strong)   NSSet               *operationsInProgress;
 @property (nonatomic, strong)   NSMutableSet        *mutableCachedUrls;
 @property (nonatomic, readonly) NSSet               *cachedUrls;
+
 @property (nonatomic, assign)   BOOL                hasGotMaxResults;
 
 @property (nonatomic, strong)   NSOperationQueue    *downloadQueue;
@@ -29,6 +30,23 @@
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
+
+
++ (instancetype)managerWithTagretUrl:(NSString *)targetUrl
+                          targetWord:(NSString *)targetWord
+                     numberOfThreads:(NSInteger)threads
+                          maxDeepnes:(NSInteger)deepnes
+                          maxResults:(NSInteger)maxResults
+{
+    WSTDownloadManager *manager = [[WSTDownloadManager alloc] init];
+    manager.targetUrlString = targetUrl;
+    manager.targetWord = targetWord;
+    manager.numberOfThreads = threads;
+    manager.maxDeepnes = deepnes;
+    manager.maxResults = maxResults;
+    
+    return manager;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -87,17 +105,23 @@
 #pragma mark Public Methods
 
 - (void)start {
-    WSTPageModel *startPage = [WSTPageModel new];
-    
-    startPage.targerWord = self.targetWord;
-    startPage.pageUrl = self.targetUrlString;
-    
-    [self processPage:startPage];
-    
+    if (self.downloadQueue.isSuspended) {
+        self.downloadQueue.suspended = NO;
+    } else {
+        WSTPageModel *startPage = [WSTPageModel new];
+        startPage.targetWord = self.targetWord;
+        startPage.pageUrl = self.targetUrlString;
+        
+        [self processPage:startPage];
+    }
+}
+
+- (void)suspend {
+    self.downloadQueue.suspended = YES;
 }
 
 - (void)stop {
-    
+    [self.downloadQueue cancelAllOperations];
 }
 
 #pragma mark -
@@ -145,7 +169,7 @@
         NSArray *uniqueLinks = [self uniqueUrlStringsFromPage:page];
         for (NSString *link in uniqueLinks) {
             WSTPageModel *newPage = [WSTPageModel new];
-            newPage.targerWord = page.targerWord;
+            newPage.targetWord = page.targetWord;
             newPage.pageUrl = link;
             newPage.deepnesLevel = nextDeepnesLevel;
             

@@ -18,12 +18,12 @@
 - (IBAction)onStart:(id)sender {
     NSString *targetWord = @"ukraine";
     NSString *targetUrlString = @"http://www.bbc.com";
-    WSTDownloadManager *manager = [WSTDownloadManager new];
-    manager.targetUrlString = targetUrlString;
-    manager.targetWord = targetWord;
-    manager.maxResults = 500;
-    manager.maxDeepnes = 3;
-    manager.numberOfThreads = 8;
+    
+    WSTDownloadManager *manager = [WSTDownloadManager managerWithTagretUrl:targetUrlString
+                                                                targetWord:targetWord
+                                                           numberOfThreads:8
+                                                                maxDeepnes:3
+                                                                maxResults:500];
     
     [manager start];
 }
