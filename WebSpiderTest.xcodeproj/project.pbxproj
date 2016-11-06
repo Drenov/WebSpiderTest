@@ -12,14 +12,20 @@
 		3177605B1DCF378A00793246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317760591DCF378A00793246 /* Main.storyboard */; };
 		3177605D1DCF378A00793246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3177605C1DCF378A00793246 /* Assets.xcassets */; };
 		317760601DCF378A00793246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3177605E1DCF378A00793246 /* LaunchScreen.storyboard */; };
-		31A699C31DCF543D0015599F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C21DCF543D0015599F /* ViewController.m */; };
 		31A699C61DCF615B0015599F /* WSTPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C51DCF615B0015599F /* WSTPageModel.m */; };
 		31A699C91DCF63530015599F /* WSTPageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C81DCF63530015599F /* WSTPageDownloader.m */; };
 		31A699CE1DCF66240015599F /* NSArray+WSTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699CD1DCF66240015599F /* NSArray+WSTExtensions.m */; };
 		31A699D11DCF674A0015599F /* NSString+WSTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D01DCF674A0015599F /* NSString+WSTExtensions.m */; };
 		31A699D41DCF71BE0015599F /* WSTDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D31DCF71BE0015599F /* WSTDownloadManager.m */; };
-		31A699DA1DCFA4DF0015599F /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */; };
-		31A699DB1DCFA4DF0015599F /* UIWindow+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */; };
+		31A699DE1DCFD5FA0015599F /* WSTSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699DD1DCFD5FA0015599F /* WSTSearchResultViewController.m */; };
+		31A699E71DCFD6FB0015599F /* WSTSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699E61DCFD6FB0015599F /* WSTSearchResultView.m */; };
+		31A699EB1DCFD7820015599F /* WSTSearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699E91DCFD7820015599F /* WSTSearchResultTableViewCell.m */; };
+		31A699EC1DCFD7820015599F /* WSTSearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A699EA1DCFD7820015599F /* WSTSearchResultTableViewCell.xib */; };
+		31A69A001DCFD93E0015599F /* NSBundle+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699F11DCFD93E0015599F /* NSBundle+GPUtils.m */; };
+		31A69A011DCFD93E0015599F /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699F41DCFD93E0015599F /* UIAlertController+Window.m */; };
+		31A69A021DCFD93E0015599F /* UINib+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699F71DCFD93E0015599F /* UINib+GPUtils.m */; };
+		31A69A031DCFD93E0015599F /* UITableView+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699FA1DCFD93E0015599F /* UITableView+GPUtils.m */; };
+		31A69A041DCFD93E0015599F /* UIWindow+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699FF1DCFD93E0015599F /* UIWindow+GPUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +37,6 @@
 		3177605C1DCF378A00793246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3177605F1DCF378A00793246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		317760611DCF378A00793246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31A699C11DCF543D0015599F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		31A699C21DCF543D0015599F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		31A699C41DCF615B0015599F /* WSTPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTPageModel.h; path = WSTPageModel/WSTPageModel.h; sourceTree = "<group>"; };
 		31A699C51DCF615B0015599F /* WSTPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTPageModel.m; path = WSTPageModel/WSTPageModel.m; sourceTree = "<group>"; };
 		31A699C71DCF63530015599F /* WSTPageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTPageDownloader.h; path = WSTPageDownloader/WSTPageDownloader.h; sourceTree = "<group>"; };
@@ -43,10 +47,24 @@
 		31A699D01DCF674A0015599F /* NSString+WSTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WSTExtensions.m"; sourceTree = "<group>"; };
 		31A699D21DCF71BE0015599F /* WSTDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTDownloadManager.h; path = WSTDownloadManager/WSTDownloadManager.h; sourceTree = "<group>"; };
 		31A699D31DCF71BE0015599F /* WSTDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTDownloadManager.m; path = WSTDownloadManager/WSTDownloadManager.m; sourceTree = "<group>"; };
-		31A699D61DCFA4DF0015599F /* UIAlertController+Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
-		31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Window.m"; sourceTree = "<group>"; };
-		31A699D81DCFA4DF0015599F /* UIWindow+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+GPUtils.h"; sourceTree = "<group>"; };
-		31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+GPUtils.m"; sourceTree = "<group>"; };
+		31A699DC1DCFD5FA0015599F /* WSTSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTSearchResultViewController.h; path = WSTSearchResultViewController/WSTSearchResultViewController.h; sourceTree = "<group>"; };
+		31A699DD1DCFD5FA0015599F /* WSTSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTSearchResultViewController.m; path = WSTSearchResultViewController/WSTSearchResultViewController.m; sourceTree = "<group>"; };
+		31A699E51DCFD6FB0015599F /* WSTSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTSearchResultView.h; sourceTree = "<group>"; };
+		31A699E61DCFD6FB0015599F /* WSTSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTSearchResultView.m; sourceTree = "<group>"; };
+		31A699E81DCFD7820015599F /* WSTSearchResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTSearchResultTableViewCell.h; path = WSTSearchResultTableViewCell/WSTSearchResultTableViewCell.h; sourceTree = "<group>"; };
+		31A699E91DCFD7820015599F /* WSTSearchResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTSearchResultTableViewCell.m; path = WSTSearchResultTableViewCell/WSTSearchResultTableViewCell.m; sourceTree = "<group>"; };
+		31A699EA1DCFD7820015599F /* WSTSearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WSTSearchResultTableViewCell.xib; path = WSTSearchResultTableViewCell/WSTSearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		31A699F01DCFD93E0015599F /* NSBundle+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+GPUtils.h"; sourceTree = "<group>"; };
+		31A699F11DCFD93E0015599F /* NSBundle+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+GPUtils.m"; sourceTree = "<group>"; };
+		31A699F31DCFD93E0015599F /* UIAlertController+Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
+		31A699F41DCFD93E0015599F /* UIAlertController+Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Window.m"; sourceTree = "<group>"; };
+		31A699F61DCFD93E0015599F /* UINib+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINib+GPUtils.h"; sourceTree = "<group>"; };
+		31A699F71DCFD93E0015599F /* UINib+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINib+GPUtils.m"; sourceTree = "<group>"; };
+		31A699F91DCFD93E0015599F /* UITableView+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+GPUtils.h"; sourceTree = "<group>"; };
+		31A699FA1DCFD93E0015599F /* UITableView+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+GPUtils.m"; sourceTree = "<group>"; };
+		31A699FC1DCFD93E0015599F /* UIViewController+ViewProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ViewProperty.h"; sourceTree = "<group>"; };
+		31A699FE1DCFD93E0015599F /* UIWindow+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+GPUtils.h"; sourceTree = "<group>"; };
+		31A699FF1DCFD93E0015599F /* UIWindow+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+GPUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +131,7 @@
 		31A699BD1DCF543D0015599F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				31A699D61DCFA4DF0015599F /* UIAlertController+Window.h */,
-				31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */,
-				31A699D81DCFA4DF0015599F /* UIWindow+GPUtils.h */,
-				31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */,
+				31A699EE1DCFD93E0015599F /* System */,
 				31A699CC1DCF66240015599F /* NSArray+WSTExtensions.h */,
 				31A699CD1DCF66240015599F /* NSArray+WSTExtensions.m */,
 				31A699CF1DCF674A0015599F /* NSString+WSTExtensions.h */,
@@ -145,8 +160,7 @@
 		31A699C01DCF543D0015599F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				31A699C11DCF543D0015599F /* ViewController.h */,
-				31A699C21DCF543D0015599F /* ViewController.m */,
+				31A699DF1DCFD5FD0015599F /* WSTSearchResultViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -176,6 +190,103 @@
 				31A699D31DCF71BE0015599F /* WSTDownloadManager.m */,
 			);
 			name = WSTDownloadManager;
+			sourceTree = "<group>";
+		};
+		31A699DF1DCFD5FD0015599F /* WSTSearchResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				31A699E41DCFD6FB0015599F /* WSTSearchResultView */,
+				31A699ED1DCFD7850015599F /* WSTSearchResultTableViewCell */,
+				31A699DC1DCFD5FA0015599F /* WSTSearchResultViewController.h */,
+				31A699DD1DCFD5FA0015599F /* WSTSearchResultViewController.m */,
+			);
+			name = WSTSearchResultViewController;
+			sourceTree = "<group>";
+		};
+		31A699E41DCFD6FB0015599F /* WSTSearchResultView */ = {
+			isa = PBXGroup;
+			children = (
+				31A699E51DCFD6FB0015599F /* WSTSearchResultView.h */,
+				31A699E61DCFD6FB0015599F /* WSTSearchResultView.m */,
+			);
+			name = WSTSearchResultView;
+			path = WSTSearchResultViewController/WSTSearchResultView;
+			sourceTree = "<group>";
+		};
+		31A699ED1DCFD7850015599F /* WSTSearchResultTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				31A699E81DCFD7820015599F /* WSTSearchResultTableViewCell.h */,
+				31A699E91DCFD7820015599F /* WSTSearchResultTableViewCell.m */,
+				31A699EA1DCFD7820015599F /* WSTSearchResultTableViewCell.xib */,
+			);
+			name = WSTSearchResultTableViewCell;
+			sourceTree = "<group>";
+		};
+		31A699EE1DCFD93E0015599F /* System */ = {
+			isa = PBXGroup;
+			children = (
+				31A699EF1DCFD93E0015599F /* NSBundle */,
+				31A699F21DCFD93E0015599F /* UIAlertController */,
+				31A699F51DCFD93E0015599F /* UINib */,
+				31A699F81DCFD93E0015599F /* UITableView */,
+				31A699FB1DCFD93E0015599F /* UIViewController */,
+				31A699FD1DCFD93E0015599F /* UIWindow */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		31A699EF1DCFD93E0015599F /* NSBundle */ = {
+			isa = PBXGroup;
+			children = (
+				31A699F01DCFD93E0015599F /* NSBundle+GPUtils.h */,
+				31A699F11DCFD93E0015599F /* NSBundle+GPUtils.m */,
+			);
+			path = NSBundle;
+			sourceTree = "<group>";
+		};
+		31A699F21DCFD93E0015599F /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				31A699F31DCFD93E0015599F /* UIAlertController+Window.h */,
+				31A699F41DCFD93E0015599F /* UIAlertController+Window.m */,
+			);
+			path = UIAlertController;
+			sourceTree = "<group>";
+		};
+		31A699F51DCFD93E0015599F /* UINib */ = {
+			isa = PBXGroup;
+			children = (
+				31A699F61DCFD93E0015599F /* UINib+GPUtils.h */,
+				31A699F71DCFD93E0015599F /* UINib+GPUtils.m */,
+			);
+			path = UINib;
+			sourceTree = "<group>";
+		};
+		31A699F81DCFD93E0015599F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				31A699F91DCFD93E0015599F /* UITableView+GPUtils.h */,
+				31A699FA1DCFD93E0015599F /* UITableView+GPUtils.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		31A699FB1DCFD93E0015599F /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				31A699FC1DCFD93E0015599F /* UIViewController+ViewProperty.h */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		31A699FD1DCFD93E0015599F /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				31A699FE1DCFD93E0015599F /* UIWindow+GPUtils.h */,
+				31A699FF1DCFD93E0015599F /* UIWindow+GPUtils.m */,
+			);
+			path = UIWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +348,7 @@
 			files = (
 				317760601DCF378A00793246 /* LaunchScreen.storyboard in Resources */,
 				3177605D1DCF378A00793246 /* Assets.xcassets in Resources */,
+				31A699EC1DCFD7820015599F /* WSTSearchResultTableViewCell.xib in Resources */,
 				3177605B1DCF378A00793246 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,16 +360,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A69A031DCFD93E0015599F /* UITableView+GPUtils.m in Sources */,
 				31A699D41DCF71BE0015599F /* WSTDownloadManager.m in Sources */,
 				31A699D11DCF674A0015599F /* NSString+WSTExtensions.m in Sources */,
-				31A699C31DCF543D0015599F /* ViewController.m in Sources */,
+				31A69A041DCFD93E0015599F /* UIWindow+GPUtils.m in Sources */,
+				31A69A021DCFD93E0015599F /* UINib+GPUtils.m in Sources */,
+				31A69A011DCFD93E0015599F /* UIAlertController+Window.m in Sources */,
 				31A699CE1DCF66240015599F /* NSArray+WSTExtensions.m in Sources */,
+				31A69A001DCFD93E0015599F /* NSBundle+GPUtils.m in Sources */,
+				31A699EB1DCFD7820015599F /* WSTSearchResultTableViewCell.m in Sources */,
 				31A699C61DCF615B0015599F /* WSTPageModel.m in Sources */,
 				317760551DCF378A00793246 /* AppDelegate.m in Sources */,
 				31A699C91DCF63530015599F /* WSTPageDownloader.m in Sources */,
 				317760521DCF378A00793246 /* main.m in Sources */,
-				31A699DB1DCFA4DF0015599F /* UIWindow+GPUtils.m in Sources */,
-				31A699DA1DCFA4DF0015599F /* UIAlertController+Window.m in Sources */,
+				31A699DE1DCFD5FA0015599F /* WSTSearchResultViewController.m in Sources */,
+				31A699E71DCFD6FB0015599F /* WSTSearchResultView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

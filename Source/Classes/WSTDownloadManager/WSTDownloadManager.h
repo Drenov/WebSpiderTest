@@ -12,8 +12,10 @@
 @class WSTPageModel;
 
 @protocol WSTDownloadManagerDelegate <NSObject>
-
-- (void)downloadManager:(WSTDownloadManager *)manager didUpdatePages:(NSArray<WSTPageModel*>*)pages;
+/*
+    All notifications performed on main thread
+ */
+- (void)downloadManager:(WSTDownloadManager *)manager didUpdatePage:(WSTPageModel *)page;
 
 @end
 

@@ -12,7 +12,6 @@
 #import "UIAlertController+Window.h"
 
 @interface WSTDownloadManager ()
-@property (nonatomic, strong)   NSSet               *operationsInProgress;
 @property (nonatomic, strong)   NSMutableSet        *mutableCachedUrls;
 @property (nonatomic, readonly) NSSet               *cachedUrls;
 
@@ -105,9 +104,10 @@
 #pragma mark Public Methods
 
 - (void)start {
-    if (self.downloadQueue.isSuspended) {
-        self.downloadQueue.suspended = NO;
-    } else {
+    NSOperationQueue *downloadQueue = self.downloadQueue;
+    if (downloadQueue.isSuspended) {
+        downloadQueue.suspended = NO;
+    } else if (!downloadQueue.operations.count){
         WSTPageModel *startPage = [WSTPageModel new];
         startPage.targetWord = self.targetWord;
         startPage.pageUrl = self.targetUrlString;
@@ -122,6 +122,9 @@
 
 - (void)stop {
     [self.downloadQueue cancelAllOperations];
+    [self.mutableCachedUrls removeAllObjects];
+    [self.mutablePages removeAllObjects];
+    self.hasGotMaxResults = NO;
 }
 
 #pragma mark -
@@ -134,7 +137,7 @@
 }
 
 - (void)processPage:(WSTPageModel *)page {
-    if ([self checkMaxResultsObtained]) {
+    if ([self checkMaxResultsObtained] ) {
         return;
     }
     
@@ -152,6 +155,10 @@
         NSLog(@"FINISHED");
         if (![self checkMaxResultsObtained]) {
             [self.mutablePages addObject:page];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate downloadManager:self didUpdatePage:page];
+            });
+            
             NSArray *uniquePages = [self uniquePagesFromPage:page];
         
             [self processPages:uniquePages];
