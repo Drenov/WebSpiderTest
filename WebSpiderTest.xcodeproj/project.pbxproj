@@ -13,6 +13,13 @@
 		3177605D1DCF378A00793246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3177605C1DCF378A00793246 /* Assets.xcassets */; };
 		317760601DCF378A00793246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3177605E1DCF378A00793246 /* LaunchScreen.storyboard */; };
 		31A699C31DCF543D0015599F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C21DCF543D0015599F /* ViewController.m */; };
+		31A699C61DCF615B0015599F /* WSTPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C51DCF615B0015599F /* WSTPageModel.m */; };
+		31A699C91DCF63530015599F /* WSTPageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699C81DCF63530015599F /* WSTPageDownloader.m */; };
+		31A699CE1DCF66240015599F /* NSArray+WSTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699CD1DCF66240015599F /* NSArray+WSTExtensions.m */; };
+		31A699D11DCF674A0015599F /* NSString+WSTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D01DCF674A0015599F /* NSString+WSTExtensions.m */; };
+		31A699D41DCF71BE0015599F /* WSTDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D31DCF71BE0015599F /* WSTDownloadManager.m */; };
+		31A699DA1DCFA4DF0015599F /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */; };
+		31A699DB1DCFA4DF0015599F /* UIWindow+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,20 @@
 		317760611DCF378A00793246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31A699C11DCF543D0015599F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		31A699C21DCF543D0015599F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31A699C41DCF615B0015599F /* WSTPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTPageModel.h; path = WSTPageModel/WSTPageModel.h; sourceTree = "<group>"; };
+		31A699C51DCF615B0015599F /* WSTPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTPageModel.m; path = WSTPageModel/WSTPageModel.m; sourceTree = "<group>"; };
+		31A699C71DCF63530015599F /* WSTPageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTPageDownloader.h; path = WSTPageDownloader/WSTPageDownloader.h; sourceTree = "<group>"; };
+		31A699C81DCF63530015599F /* WSTPageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTPageDownloader.m; path = WSTPageDownloader/WSTPageDownloader.m; sourceTree = "<group>"; };
+		31A699CC1DCF66240015599F /* NSArray+WSTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WSTExtensions.h"; sourceTree = "<group>"; };
+		31A699CD1DCF66240015599F /* NSArray+WSTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WSTExtensions.m"; sourceTree = "<group>"; };
+		31A699CF1DCF674A0015599F /* NSString+WSTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WSTExtensions.h"; sourceTree = "<group>"; };
+		31A699D01DCF674A0015599F /* NSString+WSTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WSTExtensions.m"; sourceTree = "<group>"; };
+		31A699D21DCF71BE0015599F /* WSTDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTDownloadManager.h; path = WSTDownloadManager/WSTDownloadManager.h; sourceTree = "<group>"; };
+		31A699D31DCF71BE0015599F /* WSTDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTDownloadManager.m; path = WSTDownloadManager/WSTDownloadManager.m; sourceTree = "<group>"; };
+		31A699D61DCFA4DF0015599F /* UIAlertController+Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Window.h"; sourceTree = "<group>"; };
+		31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Window.m"; sourceTree = "<group>"; };
+		31A699D81DCFA4DF0015599F /* UIWindow+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+GPUtils.h"; sourceTree = "<group>"; };
+		31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+GPUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +113,14 @@
 		31A699BD1DCF543D0015599F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				31A699D61DCFA4DF0015599F /* UIAlertController+Window.h */,
+				31A699D71DCFA4DF0015599F /* UIAlertController+Window.m */,
+				31A699D81DCFA4DF0015599F /* UIWindow+GPUtils.h */,
+				31A699D91DCFA4DF0015599F /* UIWindow+GPUtils.m */,
+				31A699CC1DCF66240015599F /* NSArray+WSTExtensions.h */,
+				31A699CD1DCF66240015599F /* NSArray+WSTExtensions.m */,
+				31A699CF1DCF674A0015599F /* NSString+WSTExtensions.h */,
+				31A699D01DCF674A0015599F /* NSString+WSTExtensions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -99,6 +128,8 @@
 		31A699BE1DCF543D0015599F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				31A699CA1DCF63560015599F /* WSTPageDownloader */,
+				31A699D51DCF71C20015599F /* WSTDownloadManager */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -106,6 +137,7 @@
 		31A699BF1DCF543D0015599F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				31A699CB1DCF635E0015599F /* WSTPageModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +149,33 @@
 				31A699C21DCF543D0015599F /* ViewController.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		31A699CA1DCF63560015599F /* WSTPageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				31A699C71DCF63530015599F /* WSTPageDownloader.h */,
+				31A699C81DCF63530015599F /* WSTPageDownloader.m */,
+			);
+			name = WSTPageDownloader;
+			sourceTree = "<group>";
+		};
+		31A699CB1DCF635E0015599F /* WSTPageModel */ = {
+			isa = PBXGroup;
+			children = (
+				31A699C41DCF615B0015599F /* WSTPageModel.h */,
+				31A699C51DCF615B0015599F /* WSTPageModel.m */,
+			);
+			name = WSTPageModel;
+			sourceTree = "<group>";
+		};
+		31A699D51DCF71C20015599F /* WSTDownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				31A699D21DCF71BE0015599F /* WSTDownloadManager.h */,
+				31A699D31DCF71BE0015599F /* WSTDownloadManager.m */,
+			);
+			name = WSTDownloadManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A699D41DCF71BE0015599F /* WSTDownloadManager.m in Sources */,
+				31A699D11DCF674A0015599F /* NSString+WSTExtensions.m in Sources */,
 				31A699C31DCF543D0015599F /* ViewController.m in Sources */,
+				31A699CE1DCF66240015599F /* NSArray+WSTExtensions.m in Sources */,
+				31A699C61DCF615B0015599F /* WSTPageModel.m in Sources */,
 				317760551DCF378A00793246 /* AppDelegate.m in Sources */,
+				31A699C91DCF63530015599F /* WSTPageDownloader.m in Sources */,
 				317760521DCF378A00793246 /* main.m in Sources */,
+				31A699DB1DCFA4DF0015599F /* UIWindow+GPUtils.m in Sources */,
+				31A699DA1DCFA4DF0015599F /* UIAlertController+Window.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
