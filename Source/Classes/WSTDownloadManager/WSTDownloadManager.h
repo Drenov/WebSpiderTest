@@ -11,20 +11,27 @@
 @class WSTDownloadManager;
 @class WSTPageModel;
 
-@protocol WSTDownloadManagerDelegate <NSObject>
-/*
-    All notifications performed on main thread
+/*!
+ All notifications performed on main thread
  */
+@protocol WSTDownloadManagerDelegate <NSObject>
+
 - (void)downloadManager:(WSTDownloadManager *)manager didUpdatePage:(WSTPageModel *)page;
+- (void)downloadManagerDidStart:(WSTDownloadManager *)manager afterStop:(BOOL)wasStopped;
+- (void)downloadManagerDidSuspend:(WSTDownloadManager *)manager;
+- (void)downloadManagerDidStop:(WSTDownloadManager *)manager;
 
 @end
 
 @interface WSTDownloadManager : NSObject
-@property (nonatomic, copy)     NSString    *targetUrlString;
-@property (nonatomic, copy)     NSString    *targetWord;
-@property (nonatomic, assign)   NSInteger   numberOfThreads;
-@property (nonatomic, assign)   NSInteger   maxDeepnes;
-@property (nonatomic, assign)   NSInteger   maxResults;
+@property (nonatomic, readonly)     NSString    *targetUrlString;
+@property (nonatomic, readonly)     NSString    *targetWord;
+@property (nonatomic, readonly)     NSInteger   numberOfThreads;
+@property (nonatomic, readonly)     NSInteger   maxDeepnes;
+@property (nonatomic, readonly)     NSInteger   maxResults;
+
+@property (nonatomic, readonly)     NSInteger   totalPages;
+@property (nonatomic, readonly)     NSInteger   totalPagesWithTargetWord;
 
 @property (nonatomic, readonly) NSArray<WSTPageModel*>      *pages;
 

@@ -36,21 +36,20 @@ GPUTViewControllerForViewPropertySyntesize(WSTSearchResultViewController, WSTSea
 }
 
 #pragma mark -
-#pragma markPrivate Methods
+#pragma mark Private Methods
 
+// Setup perfomed once as application in demo
 - (void)setupDownloadManager {
-    NSString *targetWord = @"ukraine";
-    NSString *targetUrlString = @"http://www.bbc.com";
+    NSString *targetWord = self.rootView.targetWordTextField.text;
+    NSString *targetUrlString = self.rootView.targetUrlTextField.text;
     
     WSTDownloadManager *manager = [WSTDownloadManager managerWithTagretUrl:targetUrlString
                                                                 targetWord:targetWord
                                                            numberOfThreads:8
-                                                                maxDeepnes:3
+                                                                maxDeepnes:5
                                                                 maxResults:500];
     manager.delegate = self;
     self.downloadManager = manager;
-    
-    [manager start];
 }
 
 #pragma mark -
@@ -74,6 +73,29 @@ GPUTViewControllerForViewPropertySyntesize(WSTSearchResultViewController, WSTSea
 - (void)downloadManager:(WSTDownloadManager *)manager didUpdatePage:(WSTPageModel *)page {
     [self.dataSource addObject:page];
     [self.rootView.tableView reloadData];
+    [self updateWithDownloadManager:manager];
+}
+
+- (void)downloadManagerDidStart:(WSTDownloadManager *)manager afterStop:(BOOL)wasStopped {
+    self.rootView.statusLabel.text = @"In progress";
+    if (wasStopped) {
+        [self.dataSource removeAllObjects];
+        [self updateWithDownloadManager:manager];
+    }
+}
+
+- (void)downloadManagerDidSuspend:(WSTDownloadManager *)manager {
+    self.rootView.statusLabel.text = @"Suspended";
+}
+
+- (void)downloadManagerDidStop:(WSTDownloadManager *)manager {
+    self.rootView.statusLabel.text = @"Stopped";
+}
+
+- (void)updateWithDownloadManager:(WSTDownloadManager *)manager {
+    WSTSearchResultView *view = self.rootView;
+    view.totalPagesLabel.text = @(manager.totalPages).stringValue;
+    view.totalPagesWithTargetLabel.text = @(manager.totalPagesWithTargetWord).stringValue;
 }
 
 #pragma mark -
@@ -102,6 +124,16 @@ GPUTViewControllerForViewPropertySyntesize(WSTSearchResultViewController, WSTSea
 {
     // Create a invisible footer. Will remove extral separator lines at the end of cells
     return 0.01f;
+}
+
+#pragma mark -
+#pragma mark UITextFieldDelegate
+
+- (BOOL)                textField:(UITextField *)textField
+    shouldChangeCharactersInRange:(NSRange)range
+                replacementString:(NSString *)string
+{
+    return NO;
 }
 
 @end

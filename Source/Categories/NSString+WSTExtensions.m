@@ -19,7 +19,6 @@
     NSUInteger numberOfMatches = [regex numberOfMatchesInString:self
                                                         options:0
                                                           range:NSMakeRange(0, [self length])];
-    NSLog(@"Found %lu",(unsigned long)numberOfMatches);
     
     return numberOfMatches;
 }

@@ -26,6 +26,7 @@
 		31A69A021DCFD93E0015599F /* UINib+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699F71DCFD93E0015599F /* UINib+GPUtils.m */; };
 		31A69A031DCFD93E0015599F /* UITableView+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699FA1DCFD93E0015599F /* UITableView+GPUtils.m */; };
 		31A69A041DCFD93E0015599F /* UIWindow+GPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A699FF1DCFD93E0015599F /* UIWindow+GPUtils.m */; };
+		7166CC391DD09A9D00831DD4 /* WSTMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = 7170624A1DD07D4F0043F3E7 /* WSTMacro.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		31A699FC1DCFD93E0015599F /* UIViewController+ViewProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ViewProperty.h"; sourceTree = "<group>"; };
 		31A699FE1DCFD93E0015599F /* UIWindow+GPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+GPUtils.h"; sourceTree = "<group>"; };
 		31A699FF1DCFD93E0015599F /* UIWindow+GPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+GPUtils.m"; sourceTree = "<group>"; };
+		7170624A1DD07D4F0043F3E7 /* WSTMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				31A699CA1DCF63560015599F /* WSTPageDownloader */,
 				31A699D51DCF71C20015599F /* WSTDownloadManager */,
+				7170624A1DD07D4F0043F3E7 /* WSTMacro.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -319,7 +322,8 @@
 				TargetAttributes = {
 					3177604C1DCF378A00793246 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = Z677JUVERM;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -360,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7166CC391DD09A9D00831DD4 /* WSTMacro.h in Sources */,
 				31A69A031DCFD93E0015599F /* UITableView+GPUtils.m in Sources */,
 				31A699D41DCF71BE0015599F /* WSTDownloadManager.m in Sources */,
 				31A699D11DCF674A0015599F /* NSString+WSTExtensions.m in Sources */,
@@ -440,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -482,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,10 +499,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z677JUVERM;
 				INFOPLIST_FILE = WebSpiderTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WebSpiderTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -505,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WebSpiderTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WebSpiderTest;

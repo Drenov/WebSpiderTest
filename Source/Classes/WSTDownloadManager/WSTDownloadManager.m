@@ -10,16 +10,25 @@
 #import "WSTPageDownloader.h"
 #import "WSTPageModel.h"
 #import "UIAlertController+Window.h"
+#import "WSTMacro.h"
 
 @interface WSTDownloadManager ()
+@property (nonatomic, copy)     NSString    *targetUrlString;
+@property (nonatomic, copy)     NSString    *targetWord;
+@property (nonatomic, assign)   NSInteger   numberOfThreads;
+@property (nonatomic, assign)   NSInteger   maxDeepnes;
+@property (nonatomic, assign)   NSInteger   maxResults;
+
+@property (nonatomic, assign)   NSInteger   totalPages;
+@property (nonatomic, assign)   NSInteger   totalPagesWithTargetWord;
+
+
 @property (nonatomic, strong)   NSMutableSet        *mutableCachedUrls;
 @property (nonatomic, readonly) NSSet               *cachedUrls;
 
 @property (nonatomic, assign)   BOOL                hasGotMaxResults;
 
 @property (nonatomic, strong)   NSOperationQueue    *downloadQueue;
-
-@property (nonatomic, strong)   NSMutableArray<WSTPageModel*>      *mutablePages;
 
 @end
 
@@ -51,7 +60,6 @@
     self = [super init];
     if (self) {
         self.mutableCachedUrls = [NSMutableSet new];
-        self.mutablePages = [NSMutableArray new];
     }
     
     return self;
@@ -88,12 +96,6 @@
     return _numberOfThreads;
 }
 
-- (NSArray<WSTPageModel *> *)pages {
-    NSArray *result = [NSArray arrayWithArray:self.mutablePages];
-    
-    return result;
-}
-
 - (NSSet *)cachedUrls {
     NSSet *result = [NSSet setWithSet:self.mutableCachedUrls];
 
@@ -107,10 +109,16 @@
     NSOperationQueue *downloadQueue = self.downloadQueue;
     if (downloadQueue.isSuspended) {
         downloadQueue.suspended = NO;
+        dispatch_main_async_safe(^{
+            [self.delegate downloadManagerDidStart:self afterStop:NO];
+        });
     } else if (!downloadQueue.operations.count){
         WSTPageModel *startPage = [WSTPageModel new];
         startPage.targetWord = self.targetWord;
         startPage.pageUrl = self.targetUrlString;
+        dispatch_main_async_safe(^{
+            [self.delegate downloadManagerDidStart:self afterStop:YES];
+        });
         
         [self processPage:startPage];
     }
@@ -118,13 +126,20 @@
 
 - (void)suspend {
     self.downloadQueue.suspended = YES;
+    dispatch_main_async_safe(^{
+        [self.delegate downloadManagerDidSuspend:self];
+    });
 }
 
 - (void)stop {
     [self.downloadQueue cancelAllOperations];
     [self.mutableCachedUrls removeAllObjects];
-    [self.mutablePages removeAllObjects];
     self.hasGotMaxResults = NO;
+    self.totalPages = 0;
+    self.totalPagesWithTargetWord = 0;
+    dispatch_main_async_safe(^{
+        [self.delegate downloadManagerDidStop:self];
+    });
 }
 
 #pragma mark -
@@ -152,15 +167,17 @@
             return;
         }
         
-        NSLog(@"FINISHED");
         if (![self checkMaxResultsObtained]) {
-            [self.mutablePages addObject:page];
-            dispatch_async(dispatch_get_main_queue(), ^{
+            self.totalPages += 1;
+            if (page.targetWordCount) {
+                self.totalPagesWithTargetWord += 1;
+            }
+            
+            dispatch_main_async_safe(^{
                 [self.delegate downloadManager:self didUpdatePage:page];
             });
             
             NSArray *uniquePages = [self uniquePagesFromPage:page];
-        
             [self processPages:uniquePages];
         }
     };
@@ -213,7 +230,7 @@
 - (void)showMaxResultsCompleteMessage {
     if (!self.hasGotMaxResults) {
         self.hasGotMaxResults = YES;
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_main_async_safe(^{
             [UIAlertController showAlertWithTitle:@"Max possible results found"];
         });
     }
@@ -221,7 +238,7 @@
 
 - (void)checkAllOperationsCompleted {
     if (!self.downloadQueue.operations.count) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_main_async_safe(^{
             [UIAlertController showAlertWithTitle:@"Search finished"];
         });
     }
