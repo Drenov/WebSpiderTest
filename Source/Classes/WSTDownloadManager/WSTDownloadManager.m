@@ -217,7 +217,7 @@
 }
 
 - (BOOL)checkMaxResultsObtained {
-    if (self.pages.count >= self.maxResults) {
+    if (self.totalPages >= self.maxResults) {
         [self showMaxResultsCompleteMessage];
         [self.downloadQueue cancelAllOperations];
         

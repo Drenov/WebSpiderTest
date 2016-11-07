@@ -33,8 +33,6 @@
 @property (nonatomic, readonly)     NSInteger   totalPages;
 @property (nonatomic, readonly)     NSInteger   totalPagesWithTargetWord;
 
-@property (nonatomic, readonly) NSArray<WSTPageModel*>      *pages;
-
 + (instancetype)managerWithTagretUrl:(NSString *)targetUrl
                           targetWord:(NSString *)targetUrl
                      numberOfThreads:(NSInteger)threads
